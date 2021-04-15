@@ -1,0 +1,271 @@
+.topics-list,
+.skills-list,
+.semester-list {
+  padding: 0;
+  margin: 0;
+}
+
+.program {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  padding: 50px 0 537px 0;
+
+  background-color: $blackLighter;
+  background-repeat: no-repeat;
+
+  @include beforeTablet {
+    background-image: url(../images/program_mobile.png);
+    background-size: 120px 137px;
+    background-position: 100% 1458px;
+
+    @media screen and (min-width: 415px) {
+      background-position: 100% 1439px;
+    }
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(../images/program_mobile@2x.png);
+    }
+  }
+
+  @include betweenTabDesk {
+    padding: 60px 0 392px 0;
+
+    background-image: url(../images/program_tablet.png);
+    background-size: 384px 280px;
+    background-position: 100% 817px;
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(../images/program_tablet@2x.png);
+    }
+  }
+
+  @include desktop {
+    padding: 120px 0 363px;
+
+    background-image: url(../images/program_desktop.png);
+    background-size: 668px 560px;
+    background-position: calc(50% - 504px) 676px;
+
+    @media screen and (min-width: 1674px) {
+      background-position: 0 676px;
+    }
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(../images/program_desktop@2x.png);
+    }
+
+    &::before {
+      position: absolute;
+      top: 277px;
+      content: '';
+      width: 100%;
+      height: 1px;
+      display: block;
+      background-color: $white;
+    }
+  }
+}
+
+.program__title {
+  margin-bottom: 41px;
+  color: $white;
+  text-align: center;
+
+  @include tablet {
+    margin-bottom: 49px;
+    text-align: left;
+  }
+
+  @include desktop {
+    margin-bottom: 157px;
+  }
+}
+
+.semester-list {
+  position: relative;
+  padding-left: calc(50% - 40px);
+
+  &:before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 1271px;
+    position: absolute;
+    top: 14px;
+    left: calc(50% - 67px);
+    background-color: $white;
+
+    @media screen and (min-width: 403px) {
+      height: 1269px;
+    }
+
+    @media screen and (min-width: 415px) {
+      height: 1252px;
+    }
+
+    @include tablet {
+      left: 63px;
+      height: 702px;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    padding-left: 119px;
+  }
+
+  @include desktop {
+    display: flex;
+    padding-left: 0;
+  }
+}
+
+.semester-list__item {
+  &:not(:last-child) {
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 22px;
+    }
+
+    @include desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  @include desktop {
+    width: 240px;
+
+    &:not(:last-child) {
+      margin-right: 35px;
+    }
+  }
+}
+
+.semester-list__title {
+  position: relative;
+
+  margin-bottom: 5px;
+
+  font-family: $ffBold;
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $white;
+
+  &::before {
+    content: '';
+    display: block;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    background-color: $orange;
+    position: absolute;
+    top: 8px;
+    left: -33px;
+
+    @include tablet {
+      left: -62px;
+    }
+
+    @include desktop {
+      width: 17px;
+      height: 17px;
+      top: -68px;
+      left: -1px;
+    }
+  }
+
+  @include desktop {
+    &::first-letter {
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}
+
+.skills-list {
+  @include betweenTabDesk {
+    display: flex;
+  }
+}
+
+.skills-list__item {
+  font-family: $ffBold;
+  font-size: 12px;
+  line-height: 32px;
+  letter-spacing: 0.08em;
+  text-transform: initial;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+
+    @include betweenTabDesk {
+      margin-right: 50px;
+    }
+
+    @include desktop {
+      margin-bottom: 27px;
+    }
+  }
+
+  @include betweenTabDesk {
+    margin-bottom: 0;
+
+    &:nth-child(1) {
+      width: 176px;
+    }
+    &:nth-child(2) {
+      width: 155px;
+    }
+  }
+}
+
+.skills-list__title {
+  margin-bottom: 5px;
+
+  line-height: 2;
+  color: $orange;
+  letter-spacing: 0.08em;
+  line-height: 2.667;
+
+  @include desktop {
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 1.65;
+  }
+}
+
+.topics-list__item {
+  font-family: $ffMedium;
+  font-size: 12px;
+  line-height: 1.667;
+  letter-spacing: 0.08em;
+  color: $grey;
+  opacity: 0.5;
+
+  @media screen and (max-width: 402px) {
+    max-width: 215px;
+  }
+
+  @include desktop {
+    font-size: 18px;
+    line-height: 1.55;
+  }
+}

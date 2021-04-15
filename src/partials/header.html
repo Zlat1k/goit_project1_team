@@ -1,0 +1,43 @@
+<header class="header" id="header-shadow">
+  <div class="container header__container">
+    <nav class="header__nav">
+      <a class="header__link-logo" href="./index.html">
+        <svg class="header__icon-logo">
+          <use href="./images/icon-sprite.svg#icon-logo"></use>
+        </svg>
+      </a>
+      <div class="header__menu" id="header-menu" data-menu>
+        <ul class="header__list-links">
+          <li class="header__list-item">
+            <a class="header__link-list" href="#program">Программы обучения</a>
+          </li>
+          <li class="header__list-item">
+            <a class="header__link-list" href="#about">О нас</a>
+          </li>
+          <li class="header__list-item">
+            <a class="header__link-list" href="#benefits">Варианты обучения</a>
+          </li>
+          <li class="header__list-item">
+            <a class="header__link-list" href="#contacts">Контакты</a>
+          </li>
+        </ul>
+        <button
+          class="button header__button"
+          aria-label="кнопка консультация по телефону"
+          data-modal-open
+        >
+          Консультация по телефону
+        </button>
+        <button
+          class="header__toggle-menu js-open-menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          data-menu-button
+        >
+          <span class="header__burger"></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>

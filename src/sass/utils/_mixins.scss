@@ -1,0 +1,47 @@
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin beforeTablet {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin betweenTabDesk {
+  @media screen and (min-width: 768px) and (max-width: 1344px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1345px) {
+    @content;
+  }
+}
+
+@mixin background_img_resolution {
+  @media screen and (-webkit-min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+@mixin box-shadow(
+  $layer-1: 0px 1px 3px rgba(0, 0, 0, 0.12),
+  $layer-2: 0px 1px 1px rgba(0, 0, 0, 0.14),
+  $layer-3: 0px 2px 1px rgba(0, 0, 0, 0.2)
+) {
+  box-shadow: $layer-1, $layer-2, $layer-3;
+}
+
+@mixin box-shadow-logo(
+  $layer-1: 0px 0px 26px rgb(240 106 44 / 5%),
+  $layer-2: 0px 0px 26px rgb(240 106 44 / 5%),
+  $layer-3: 0px 0px 26px rgb(240 106 44 / 5%)
+) {
+  box-shadow: $layer-1, $layer-2, $layer-3;
+}

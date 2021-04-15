@@ -1,0 +1,155 @@
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 12;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: $white;
+
+  @include tablet {
+    padding: 42px 0;
+  }
+  @include desktop {
+    padding: 28px 0;
+  }
+}
+
+.header__container {
+  @include tablet {
+    padding-left: 40px;
+    padding-right: 36px;
+  }
+  @include desktop {
+    padding: 0 15px;
+  }
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__icon-logo {
+  display: block;
+  width: 80px;
+  height: 28px;
+  @include tablet {
+    width: 128px;
+    height: 45px;
+  }
+}
+
+.header__link-logo {
+  display: block;
+  width: 80px;
+  height: 28px;
+  transition: background-color $cubicBezier, box-shadow $cubicBezier;
+  &:hover {
+    background-color: $bgLogo;
+    @include box-shadow-logo;
+  }
+  @include tablet {
+    width: 129px;
+    height: 46px;
+  }
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+}
+
+.header__list-item {
+  &:not(:last-child) {
+    margin-right: 40px;
+  }
+}
+
+.header__link-list {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.214;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #b9b9b9;
+  transition: color $cubicBezier;
+  &:hover,
+  &:focus {
+    color: $orange;
+  }
+}
+
+.header__list-links {
+  @media (max-width: 1344px) {
+    display: none;
+  }
+  display: flex;
+}
+
+.header__button {
+  @media (max-width: 767px) {
+    display: none;
+  }
+  background-color: rgba(0, 0, 0, 0);
+  color: $orange;
+  border: 2px solid $orange;
+  font-family: $ffBold;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  @include tablet {
+    width: 260px;
+  }
+  @include desktop {
+    margin-left: 60px;
+    width: 336px;
+  }
+}
+
+.header__toggle-menu {
+  margin-left: 40px;
+  background-color: rgba(0, 0, 0, 0);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border: none;
+  @media (min-width: 1345px) {
+    display: none;
+  }
+}
+
+.header__burger {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: $black;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  position: relative;
+  transition: background-color $cubicBezier;
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: $black;
+    position: absolute;
+    transition: background-color $cubicBezier;
+  }
+  &::before {
+    bottom: 7px;
+  }
+  &::after {
+    bottom: -7px;
+  }
+  .header__toggle-menu:hover > &::before,
+  .header__toggle-menu:hover > &::after,
+  .header__toggle-menu:hover > &,
+  .header__toggle-menu:focus > &::before,
+  .header__toggle-menu:focus > &::after,
+  .header__toggle-menu:focus > & {
+    background-color: $orange;
+  }
+}
